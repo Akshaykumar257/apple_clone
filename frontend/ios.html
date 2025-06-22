@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iOS - Apple (India)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background: url('apple-tv-plus-movies-header.jpg.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header fix */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: rgba(0, 0, 0, 0.9);
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #f2f2f2;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 100px 20px 50px;
+    }
+
+    .hero-section h1 {
+      font-size: 56px;
+      margin-bottom: 10px;
+    }
+
+    .hero-section p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .features-section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .feature-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .feature-block.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .feature-image {
+      flex: 1 1 50%;
+      text-align: center;
+    }
+
+    .feature-image img {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .feature-text {
+      flex: 1 1 50%;
+      padding: 20px;
+    }
+
+    .feature-text h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+
+    .feature-text p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .site-footer {
+      text-align: center;
+      background-color: #000;
+      color: white;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+<header class="site-header">
+  <img src="logo.jpg" alt="Apple Logo" class="logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+    <a href="entertainment.html">Entertainment</a>
+    <a href="ios.html">iOS</a>
+  </nav>
+  <div class="search-container">
+    <input type="text" placeholder="Search..." class="search-input" />
+    <button class="search-button">🔍</button>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" data-aos="fade-up">
+   <h1 class="rainbow-text">iOS 18</h1>
+    <p>The world's most advanced mobile operating system gets even better, with new personalization, intelligence, and seamless experiences.</p>
+  </section>
+  <!-- Features Section -->
+<section class="features-section">
+  <!-- Feature 1 -->
+  <div class="feature-block" data-aos="fade-right">
+    <div class="feature-image">
+      <img src="widgets.jpeg" alt="Widgets on Home Screen" />
+    </div>
+    <div class="feature-text">
+      <h2>Interactive Widgets</h2>
+      <p>Widgets in iOS 18 have become more than just glanceable tools. Now, you can directly interact with them on your Home Screen and Lock Screen. Pause a podcast, toggle smart home devices, or mark off a checklist—all without opening an app.</p>
+      <p>These widgets are deeply integrated with system apps and third-party ones, adapting in real-time to your habits, focus mode, or time of day. It's a smarter, more responsive interface right where you need it.</p>
+    </div>
+  </div>
+
+  <!-- Feature 2 -->
+  <div class="feature-block reverse" data-aos="fade-left">
+    <div class="feature-image">
+      <img src="lock screen.jpeg" alt="Lock Screen Customization" />
+    </div>
+    <div class="feature-text">
+      <h2>Lock Screen Customization</h2>
+      <p>iOS 18 brings a more expressive Lock Screen. Choose dynamic photo shuffle wallpapers, apply filters, pick new fonts, and add widgets for weather, battery, and calendar events—so your iPhone feels uniquely yours at first glance.</p>
+      <p>You can even link Lock Screens to Focus Modes, giving you a tailored experience for work, personal time, or travel. It’s not just customization—it’s personalization with purpose.</p>
+    </div>
+  </div>
+
+  <!-- Feature 3 -->
+  <div class="feature-block" data-aos="fade-right">
+    <div class="feature-image">
+      <img src="privacy.png" alt="iOS Privacy" />
+    </div>
+    <div class="feature-text">
+      <h2>Enhanced Privacy</h2>
+      <p>Your privacy remains at the core of iOS. With Mail Privacy Protection, iOS hides your IP and prevents senders from knowing if and when you open emails. App Tracking Transparency forces apps to ask for permission before tracking your activity across other apps and websites.</p>
+      <p>The new Privacy Report gives you a comprehensive overview of how apps are using your data. iOS 18 empowers you with the knowledge and tools to control what you share—and what you don’t.</p>
+    </div>
+  </div>
+
+  <!-- Feature 4 (optional extra) -->
+  <div class="feature-block reverse" data-aos="fade-left">
+    <div class="feature-image">
+      <img src="imessage.jpeg" alt="iMessage Updates" />
+    </div>
+    <div class="feature-text">
+      <h2>iMessage Evolution</h2>
+      <p>With iOS 18, messaging becomes more expressive and secure. You can now edit sent messages, undo sends, and even mark messages as unread to come back to them later. Richer animations and new Tapback reactions keep conversations fun and fluid.</p>
+      <p>End-to-end encryption remains standard, and with improved group management and inline replies, it's easier to keep everyone in sync—no matter how large the chat.</p>
+    </div>
+  </div>
+</section> 
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Apple Exclusive. All rights reserved.</p>
+  </footer>
+
+  <!-- AOS Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>

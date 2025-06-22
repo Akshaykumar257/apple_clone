@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Apple (India)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <img src="logo.jpg" alt="Apple Logo" class="logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+      <a href="entertainment.html">Entertainment</a>
+      <a href="ios.html">iOS</a>
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search products..." class="search-input" />
+      <button class="search-button">🔍</button>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <form class="contact-form" data-aos="fade-up" data-aos-delay="100">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit" class="button" data-aos="fade-up" data-aos-delay="200">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Apple Exclusive. All rights reserved.</p>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <!-- Contact Form Submission Script -->
+  <script>
+    document.querySelector(".contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      try {
+        const response = await fetch("http://localhost:3000/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, message }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          alert("✅ Message sent successfully!");
+          document.querySelector(".contact-form").reset();
+        } else {
+          alert("⚠️ Failed to send message.");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("🚫 Something went wrong. Please try again.");
+      }
+    });
+  </script>
+  <script src="search.js"></script>
+</body>
+</html>

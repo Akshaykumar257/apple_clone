@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products - Apple(india)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Optional styling for Back to Top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      background-color: #ffd700;
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+    }
+
+    .back-to-top:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- Header -->
+  <header class="site-header">
+    <img src="logo.jpg" alt="Apple Logo" class="logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+       <a href="Entertainment.html">Entertainment</a>
+       <a href="ios.html">ios</a>
+       
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search products..." class="search-input" />
+      <button class="search-button">🔍</button>
+    </div>
+  </header>
+      <!-- ... head remains unchanged ... -->
+
+<!-- Product Section -->
+<section class="products" id="products">
+  <h2 data-aos="fade-up">Our Products</h2>
+  <div class="product-grid">
+
+    <!-- iPad -->
+    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="Apple-iPad-Pro-Magic-Keyboard-240507.jpg.large_2x.jpg" alt="iPad Pro" />
+      <h3>iPad Pro</h3>
+      <p>$499.99</p>
+      <button onclick="addToCart('iPad Pro', 499.99)" class="button">Add to Cart</button>
+    </div>
+
+    <!-- HomePod -->
+    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="homepod-100733525-orig.jpg.webp" alt="HomePod" />
+      <h3>HomePod</h3>
+      <p>$99.99</p>
+      <button onclick="addToCart('HomePod', 99.99)" class="button">Add to Cart</button>
+    </div>
+
+    <!-- Watch -->
+    <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="Apple-Watch-S9-hero-230912_Full-Bleed-Image.jpg.large.jpg" alt="Watch series 10" />
+      <h3>Watch Series 10</h3>
+      <p>$199.99</p>
+      <button onclick="addToCart('Watch Series 10', 199.99)" class="button">Add to Cart</button>
+    </div>
+
+    <!-- Apple TV -->
+    <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+      <img src="apple-tv-5-cover.jpg" alt="Apple TV 4K" />
+      <h3>Apple TV 4K</h3>
+      <p>$179.99</p>
+      <button onclick="addToCart('Apple TV 4K', 179.99)" class="button">Add to Cart</button>
+    </div>
+
+    <!-- AirTag -->
+    <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+      <img src="260c4c0e69e70b73c13aa1eaffd51c87.jpg.avif" alt="AirTag" />
+      <h3>AirTag</h3>
+      <p>$49.99</p>
+      <button onclick="addToCart('AirTag', 49.99)" class="button">Add to Cart</button>
+    </div>
+  </div>
+</section>
+  <!-- Back to Top Button -->
+  <a href="#top" class="back-to-top">↑ Top</a>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Apple Exclusive. All rights reserved.</p>
+  </footer>
+
+  <!-- ✅ Search Script -->
+  <!-- ✅ Search Script -->
+<script>
+  const searchInput = document.querySelector(".search-input");
+  const productCards = document.querySelectorAll(".product-card");
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    productCards.forEach(card => {
+      const productName = card.querySelector("h3, h4").textContent.toLowerCase();
+      const isMatch = productName.includes(query);
+      card.classList.toggle("hidden", !isMatch);
+      card.classList.toggle("visible", isMatch);
+    });
+  });
+
+      function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
+
+  <!-- ✅ AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <!-- ✅ Blow-out Click Animation -->
+  <script>
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.style.transform = 'scale(1.1)';
+        card.style.transition = 'transform 0.25s ease';
+        setTimeout(() => {
+          card.style.transform = 'scale(1)';
+        }, 200);
+      });
+    });
+  </script>
+  <script src="search.js"></script>
+
+</body>
+</html>

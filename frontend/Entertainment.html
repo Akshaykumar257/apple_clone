@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entertainment - Apple (India)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Uniform Entertainment Card Styling */
+    .entertainment-card {
+      transform: scale(0.95);
+      margin-top: 30px;
+      transition: transform 0.3s ease;
+      text-align: center;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.03);
+    }
+
+    .entertainment-card img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .entertainment-card h3 {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .entertainment-card p {
+      font-size: 16px;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .entertainment-card .button {
+      background-color: #ffd700;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .entertainment-card .button:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <img src="logo.jpg" alt="Apple Logo" class="logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+      <a href="entertainment.html">Entertainment</a>
+      <a href="ios.html">ios</a>
+       
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search entertainment..." class="search-input" />
+      <button class="search-button">🔍</button>
+    </div>
+  </header>
+
+  <!-- Entertainment Section -->
+  <section class="products" id="entertainment">
+    <h2 data-aos="fade-up">Entertainment</h2>
+    <div class="product-grid">
+
+      <div class="product-card entertainment-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="a80c86aca3d06da45f7934d9b571572a.jpg" alt="Apple Music" />
+        <h3>Apple Music</h3>
+        <p>Unlimited music streaming. $9.99/month</p>
+        <button class="button">Subscribe</button>
+      </div>
+
+      <div class="product-card entertainment-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="tv.jpg.webp" alt="Apple TV+" />
+        <h3>Apple TV+</h3>
+        <p>Watch exclusive shows. $6.99/month</p>
+        <button class="button">Subscribe</button>
+      </div>
+
+      <div class="product-card entertainment-card" data-aos="fade-up" data-aos-delay="300">
+        <img src="oneapple.jpg" alt="Apple One" />
+        <h3>Apple One</h3>
+        <p>Bundle all services together. $19.99/month</p>
+        <button class="button">Subscribe</button>
+      </div>
+
+      <div class="product-card entertainment-card" data-aos="fade-up" data-aos-delay="400">
+        <img src="books.jpg" alt="Apple Books" />
+        <h3>Apple Books</h3>
+        <p>Explore and read top titles. $9.99/month</p>
+        <button class="button">Subscribe</button>
+      </div>
+
+      <div class="product-card entertainment-card" data-aos="fade-up" data-aos-delay="500">
+        <img src="arcade.png" alt="Apple Arcade" />
+        <h3>Apple Arcade</h3>
+        <p>Play 200+ games ad-free. $4.99/month</p>
+        <button class="button">Subscribe</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Apple Exclusive. All rights reserved.</p>
+  </footer>
+
+  <!-- Search Script -->
+  <script>
+    const searchInput = document.querySelector(".search-input");
+    const productCards = document.querySelectorAll(".product-card");
+
+    searchInput?.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      productCards.forEach(card => {
+        const name = card.querySelector("h3")?.textContent.toLowerCase() || "";
+        const match = name.includes(query);
+        card.style.display = match ? "block" : "none";
+      });
+    });
+  </script>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <!-- Blow-out Click Animation -->
+  <script>
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.style.transform = 'scale(1.1)';
+        card.style.transition = 'transform 0.25s ease';
+        setTimeout(() => {
+          card.style.transform = 'scale(0.95)';
+        }, 200);
+      });
+    });
+  </script>
+
+</body>
+</html>
